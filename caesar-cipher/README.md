@@ -14,4 +14,4 @@
 
 ###Diagrama de flujo
 
-[Imagen del diagrama de flujo](https://goo.gl/8dvxTi)
+[Imagen del diagrama de flujo](https://goo.gl/mzZGwz)
