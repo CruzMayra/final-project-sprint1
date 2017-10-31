@@ -16,10 +16,10 @@ do{
 function cipher(){
 
   do{
-    var message = prompt("Ingrese el mensaje a cifrar");
-    var output = "";
+    var message = prompt("Ingrese el mensaje a cifrar"); // mensaje (string) a cifrar
+    var output = ""; // variable de salida donde se almacenará el texto cifrado
 
-    for(i = 0; i < message.length; i++){ // bucle para recorrer todo el array
+    for(i = 0; i < message.length; i++){ // bucle para recorrer todo el string
 
       var code = message.charCodeAt(i); // variable para obtener el código Ascii a partir del indice del mensaje (string)
       var chipherUpper = ((code - 65 + 33) % 26 + 65) // fórmula propuesta para obtener el "nuevo" código Ascii
@@ -31,8 +31,7 @@ function cipher(){
       }
 
       if(code >= 65 && code <=90){ // si el código Ascii es de letras mayúsculas se va a aplicar la fórmula propuesta
-
-  output += String.fromCharCode(chipherUpper); // se agrega al mensaje cifrado (que estaba vacío) el codigo Ascii que a su vez se convierte en un nuevo string
+        output += String.fromCharCode(chipherUpper); // se agrega al mensaje cifrado (que estaba vacío) el codigo Ascii que a su vez se convierte en un nuevo string
       }
 
       if(code >= 97 && code <=122){ // si el código Ascii es de letras minúsculas se va a aplicar la fórmula modificada
@@ -49,10 +48,10 @@ function cipher(){
 function decipher(){
 
   do{
-    var message = prompt("Ingrese el mensaje a descifrar");
-    var output = "";
+    var message = prompt("Ingrese el mensaje a descifrar"); // mensaje (string) a descifrar
+    var output = ""; // variable de salida donde se almacenará el mensaje descifrado
 
-    for(i = 0; i < message.length; i++){ // bucle para recorrer todo el array
+    for(i = 0; i < message.length; i++){ // bucle para recorrer todo el string
 
       var code = message.charCodeAt(i); // variable para obtener el código Ascii a partir del indice del mensaje (string)
       var chipherUpper = ((code - 65 - 7 + 52) % 26 + 65) // fórmula propuesta para obtener el "nuevo" código Asci
