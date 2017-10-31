@@ -6,7 +6,7 @@ do{
     if(cardNumber.length < 16 || cardNumber.length > 16){
       alert("El número de tarjeta debe contener 16 dígitos"); // condición para verificar si es el número de una tarjeta de crédito
     }
-  if(cardNumber == "" ){
+  if(cardNumber == " "){
       alert("El número de tarjeta no debe contener espacios"); // condición para verificar que el usuario no haya agregada espacios o strings
     }
 
@@ -15,8 +15,8 @@ do{
   function isValidCard(cardNumber){
 
     var reverseArr = []; // array vacío para poner en orden inverso el número de tarjeta
-    var result = [];
-    var validation = 0;
+    var result = []; // array donde se almacenan las posiciones ya multiplicadas y sumadas.
+    var validation = 0; // variable de salida donde se acumula la suma total de los dígitos de la tarjeta
 
     for(i = 0; i < cardNumber.length; i++){ // iteración para recorrer el número de tarjeta
       reverseArr.unshift(cardNumber[i]);// método para agregar al arreglo los números de la tarjeta para que queden en orden inverso
@@ -41,10 +41,10 @@ do{
     for (k = 0; k < result.length; k++){ //iteración para obtener todos los posiciones a sumar
       validation += result[k]; // suma total del número de tarjeta
     }
-    if(validation % 10 === 0){
+    if(validation % 10 === 0){ // validación de la suma total de los dígitos de la tarjeta sea multiplo de 10
       document.write("Su tarjeta es válida"); // mensaje impreso en pantalla en caso de que la tarjeta sea válida
-    }else{
+    }else{ // en caso de que la suma de los dígitos de la tarjeta no sean multiplos de 10
       document.write("Su tarjeta no es válida"); // mensaje impreso en pantalla en caso de que la tarjeta no sea válida
     }
   }
-isValidCard(cardNumber);
+isValidCard(cardNumber); // llamando a la función
